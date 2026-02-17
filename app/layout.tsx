@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { AuthProvider } from '@/components/AuthProvider/AuthProvider';
+import { AuthProvider } from '../components/AuthProvider/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import 'modern-normalize/modern-normalize.css';
 import './globals.css';
