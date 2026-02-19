@@ -35,7 +35,7 @@ export default function FavoritesPage() {
         }
 
         const favoriteIds = Object.keys(favSnapShot.val());
-        const nanniesSnapShot = await get(ref(db, 'nannies'));
+        const nanniesSnapShot = await get(ref(db, '/'));
         if (!nanniesSnapShot.exists()) {
           setFavorites([]);
           setFilteredFavorites([]);
