@@ -6,9 +6,16 @@ export default function Loading() {
       <div className={css.loaderWrapper}>
         <svg viewBox="0 0 169.76187 121.14592" className={css.maryIcon}>
           <defs>
-            <linearGradient id="maryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#3498DB" />
-              <stop offset="100%" stopColor="#1A5F7A" />
+            <linearGradient
+              id="maryGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stopColor="#FF9A9E" />
+              <stop offset="50%" stopColor="#FAD0C4" />
+              <stop offset="100%" stopColor="#A18CD1" />
             </linearGradient>
           </defs>
 
@@ -21,33 +28,23 @@ export default function Loading() {
             />
           </g>
 
-          <g className={css.cloudsAnimation}>
-            <ellipse
-              cx="30"
-              cy="105"
-              rx="20"
-              ry="8"
-              fill="#E8E8E8"
-              opacity="0.7"
-            />
-            <ellipse
-              cx="140"
-              cy="110"
-              rx="25"
-              ry="10"
-              fill="#E8E8E8"
-              opacity="0.6"
-            />
-            <ellipse
-              cx="85"
-              cy="115"
-              rx="18"
-              ry="7"
-              fill="#E8E8E8"
-              opacity="0.5"
-            />
+          <g>
+            <ellipse cx="30" cy="105" rx="20" ry="8" className={css.cloud1} />
+            <ellipse cx="140" cy="110" rx="25" ry="10" className={css.cloud2} />
+            <ellipse cx="85" cy="115" rx="18" ry="7" className={css.cloud3} />
           </g>
         </svg>
+
+        <span
+          style={{
+            fontFamily: 'sans-serif',
+            color: '#A18CD1',
+            fontWeight: 'bold',
+            fontSize: '18px',
+          }}
+        >
+          Loading...
+        </span>
       </div>
     </div>
   );
