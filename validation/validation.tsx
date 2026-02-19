@@ -14,3 +14,14 @@ export const appointmentSchema: yup.ObjectSchema<AppointmentFormData> =
     parentName: yup.string().required('Parent name is required'),
     comment: yup.string().optional(),
   }) as yup.ObjectSchema<AppointmentFormData>;
+
+export const loginSchema = yup.object({
+  email: yup
+    .string()
+    .email('Invalid email address')
+    .required('Email is required'),
+  password: yup
+    .string()
+    .min(6, 'Must be at least 6 characters')
+    .required('Password is required'),
+});

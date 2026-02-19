@@ -1,8 +1,8 @@
 'use client';
 
-import { useAuth } from '@/components/AuthProvider/AuthProvider';
+import { useAuth } from '../AuthProvider/AuthProvider';
 import { signOut } from 'firebase/auth';
-import { auth } from '@/lib/firebase/firebase';
+import { auth } from '../../lib/firebase/firebase';
 
 import styles from './Navigation.module.css';
 

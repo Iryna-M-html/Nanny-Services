@@ -7,8 +7,9 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 import { useAuth } from '../AuthProvider/AuthProvider';
-
+import Navigation from '../Navigation/Navigation';
 import styles from './HeaderMenu.module.css';
+import LoginModal from '../LoginForm/LoginModal';
 
 export default function HeaderMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,12 @@ export default function HeaderMenu() {
         </nav>
 
         {/* Auth */}
-        <div className={styles.authDesktop}></div>
+        <div className={styles.authDesktop}>
+          <Navigation
+            onLoginClick={() => setLoginIsOpen(true)}
+            onRegisterClick={() => setRegisterIsOpen(true)}
+          />
+        </div>
 
         {/* Mobile burger */}
         <button
@@ -116,11 +122,22 @@ export default function HeaderMenu() {
           </nav>
 
           {/* auth */}
-          <div className={styles.mobileAuth}></div>
+          <div className={styles.mobileAuth}>
+            <Navigation
+              onLoginClick={() => {
+                setLoginIsOpen(true);
+                setIsOpen(false);
+              }}
+              onRegisterClick={() => {
+                setRegisterIsOpen(true);
+                setIsOpen(false);
+              }}
+            />
+          </div>
         </div>
       </div>
 
-      {LoginIsOpen}
+      {LoginIsOpen && <LoginModal onClose={() => setLoginIsOpen(false)} />}
       {RegisterIsOpen}
     </div>
   );
