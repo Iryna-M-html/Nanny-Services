@@ -27,7 +27,7 @@ export default function NanniesPage() {
   useEffect(() => {
     const fetchNannies = async () => {
       try {
-        const dataSnapShot = await get(ref(db, 'nannies'));
+        const dataSnapShot = await get(ref(db, '/'));
         if (!dataSnapShot.exists()) return;
 
         const data = dataSnapShot.val();

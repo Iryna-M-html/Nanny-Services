@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
-import Image from 'next/image';
+
 import toast from 'react-hot-toast';
 
 import { AppointmentFormData, Nanny } from '@/types/nanny';
@@ -130,11 +130,11 @@ export default function Appointment({ nanny, onClose }: AppointmentProps) {
         </p>
 
         <div className={styles.nannyInfo}>
-          <Image
+          <img
             src={nanny.avatar_url}
             alt={nanny.name}
-            width={44}
-            height={44}
+            width="44"
+            height="44"
             className={styles.nannyAvatar}
           />
           <div>
