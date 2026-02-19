@@ -10,6 +10,7 @@ import { useAuth } from '../AuthProvider/AuthProvider';
 import Navigation from '../Navigation/Navigation';
 import styles from './HeaderMenu.module.css';
 import LoginModal from '../LoginForm/LoginModal';
+import RegisterModal from '../RegisterForm/RegisterForm';
 
 export default function HeaderMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -138,7 +139,9 @@ export default function HeaderMenu() {
       </div>
 
       {LoginIsOpen && <LoginModal onClose={() => setLoginIsOpen(false)} />}
-      {RegisterIsOpen}
+      {RegisterIsOpen && (
+        <RegisterModal onClose={() => setRegisterIsOpen(false)} />
+      )}
     </div>
   );
 }

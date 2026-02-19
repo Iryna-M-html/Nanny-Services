@@ -25,3 +25,18 @@ export const loginSchema = yup.object({
     .min(6, 'Must be at least 6 characters')
     .required('Password is required'),
 });
+export const regSchema = yup.object({
+  name: yup
+    .string()
+    .matches(/^[A-Za-z]+$/, 'Only letters are allowed')
+    .min(2, 'Must be at least 2 characters')
+    .required('Name is required'),
+  email: yup
+    .string()
+    .email('Invalid email address')
+    .required('Email is required'),
+  password: yup
+    .string()
+    .min(6, 'Must be at least 6 characters')
+    .required('Password is required'),
+});
