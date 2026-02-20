@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD200" />
+      <stop offset="100%" stop-color="#F7971E" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="25" fill="url(#sunGradient)" />
+  <g stroke="url(#sunGradient)" stroke-width="6" stroke-linecap="round">
+    <line x1="50" y1="10" x2="50" y2="22" />
+    <line x1="50" y1="78" x2="50" y2="90" />
+    <line x1="10" y1="50" x2="22" y2="50" />
+    <line x1="78" y1="50" x2="90" y2="50" />
+    <line x1="22" y1="22" x2="30" y2="30" />
+    <line x1="70" y1="70" x2="78" y2="78" />
+    <line x1="22" y1="78" x2="30" y2="70" />
+    <line x1="70" y1="30" x2="78" y2="22" />
+  </g>
+</svg>

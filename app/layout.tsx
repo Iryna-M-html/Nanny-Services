@@ -15,6 +15,11 @@ const SITE_URL = 'https://nanny-services-iiiiiiii.vercel.app';
 export const metadata: Metadata = {
   title: 'Nanny Services - Easy seeking babysitters Online',
   description: 'Find a trusted nanny for your child.',
+
+  icons: {
+    icon: '/img/favicon.svg',
+  },
+
   openGraph: {
     type: 'website',
     title: 'Nanny Services - Easy seeking babysitters Online',
@@ -31,9 +36,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Nanny Services - Easy seeking babysitters Online',
     description: 'Find a trusted nanny for your child.',
-    images: [`${SITE_URL}/img/hero.png`], ////додати
+    images: [`${SITE_URL}/img/hero.png`],
   },
 };
 

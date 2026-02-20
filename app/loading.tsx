@@ -4,7 +4,6 @@ export default function Loading() {
   return (
     <div className={css.loaderContainer}>
       <div className={css.loaderWrapper}>
-        {/* Изменили viewBox для удобства рисования солнца вокруг центра */}
         <svg
           viewBox="0 0 100 100"
           className={css.maryIcon}
@@ -19,17 +18,14 @@ export default function Loading() {
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#FFD200" /> {/* Ярко-желтый */}
-              <stop offset="100%" stopColor="#F7971E" /> {/* Оранжевый */}
+              <stop offset="0%" stopColor="#FFD200" />
+              <stop offset="100%" stopColor="#F7971E" />
             </linearGradient>
           </defs>
 
-          {/* Группа с анимацией вращения или плавания */}
           <g className={css.sunMain}>
-            {/* Центр солнца */}
             <circle cx="50" cy="50" r="20" fill="url(#sunGradient)" />
 
-            {/* Лучи солнца (8 штук вокруг центра) */}
             <g
               className={css.rays}
               stroke="url(#sunGradient)"
@@ -47,7 +43,6 @@ export default function Loading() {
             </g>
           </g>
 
-          {/* Твои облака остаются внизу */}
           <g>
             <ellipse
               cx="20"
