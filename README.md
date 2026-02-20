@@ -1,69 +1,80 @@
-# React + TypeScript + Vite
+# Nanny-Services Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+**Nanny-Services** is a modern web platform designed for searching and booking professional nanny services. The application provides a seamless and secure experience for parents to find qualified specialists. Users can explore detailed nanny profiles, utilize a flexible filtering system to find the perfect match, manage a "Favorites" list, and instantly contact chosen candidates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is built using **Next.js 15**, **TypeScript**, **Firebase Realtime Database**, and **Zustand**.
 
-## Expanding the ESLint configuration
+## Author
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Iryna Mokhnata**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- GitHub: [@Iryna-M-html](https://github.com/Iryna-M-html)
+- LinkedIn: [linkedin.com/in/iryna-mokhnata](https://www.linkedin.com/in/iryna-mokhnata)
+- Email: ivmohnataya@gmail.com
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Live Demo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [Live site on Vercel](https://nanny-services-two.vercel.app/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Pages
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🏠 Home Page (`/`)
+- Welcome banner with a primary Call to Action (CTA).
+- "Get Started" button to navigate to the nanny catalog.
+- Dynamic statistics and a brief overview of service benefits.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📋 Nannies Page (`/nannies`)
+- Comprehensive list of available nannies.
+- **Flexible Filtering System:**
+  - By alphabet (A-Z, Z-A).
+  - By price (low to high and vice versa).
+  - By popularity (rating).
+- Nanny cards with detailed information: experience, education, age of children, and reviews.
+- "Load More" button for pagination.
+- Ability to add nannies to the "Favorites" list (available for authorized users only).
+
+### ❤️ Favorites Page (`/favorites`)
+- Personalized list of selected nannies.
+- Quick "remove from favorites" functionality.
+- State persistence via Firebase database.
+
+## Technologies Used
+
+- **Next.js 15** (App Router & Turbopack)
+- **TypeScript**
+- **Firebase** (Authentication & Realtime Database)
+- **Zustand** (State management)
+- **React Hook Form** & **Yup** (Validation)
+- **React Hot Toast** (Notifications)
+
+## API & Database
+
+The project utilizes **Firebase Realtime Database** for storing and retrieving nanny data.
+
+**Database Structure:**
+- `/` — The root contains an array of nanny objects (indices 0, 1, 2...).
+- Each nanny profile includes: name, location, hourly rate, rating, description, reviews, and an `avatar_url` (hosted on `ftp.goit.study`).
+
+## Features
+
+- **Authentication:** Full registration and login system via Firebase Auth.
+- **Image Optimization:** Uses the `next/image` component with configured `remotePatterns` for secure avatar loading.
+- **Loading States:** Custom animated sun-themed loader.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop devices.
+
+## Installation
+
+```bash
+# Clone the repository
+git clone [https://github.com/Iryna-M-html/Nanny-Services.git](https://github.com/Iryna-M-html/Nanny-Services.git)
+
+# Navigate to the project folder
+cd Nanny-Services
+
+# Install dependencies
+npm install
+
+# Run the project in development mode
+npm run dev
