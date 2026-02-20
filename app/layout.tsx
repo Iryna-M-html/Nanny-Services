@@ -10,7 +10,7 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-const SITE_URL = 'https://nanny-services-iiiiiiii.vercel.app';
+const SITE_URL = 'https://nanny-services-two.vercel.app';
 
 export const metadata: Metadata = {
   title: 'Nanny Services - Easy seeking babysitters Online',
